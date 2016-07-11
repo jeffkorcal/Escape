@@ -16,6 +16,13 @@
   },
   "homepage": "https://github.com/jeffkorcal/2016-06-mvp#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.3",
+    "morgan": "^1.7.0",
+    "q": "^1.4.1",
+    "request": "^2.73.0",
     "unsplash-api": "^1.2.0"
   }
 }
