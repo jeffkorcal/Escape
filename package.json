@@ -22,7 +22,6 @@
     "mongoose": "^4.5.3",
     "morgan": "^1.7.0",
     "q": "^1.4.1",
-    "request": "^2.73.0",
-    "unsplash-api": "^1.2.0"
+    "request": "^2.73.0"
   }
 }
