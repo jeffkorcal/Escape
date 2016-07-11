@@ -12,7 +12,12 @@
     
    <div class="background" style="background-image: url(https://source.unsplash.com/category/nature/)">
 
-     
+     <div class="centered">
+       <div ng-controller="timeController">
+         <h1 class="center">{{ today | date:'longDate' }}</h1>
+         <h1 class="center">{{ today | date:'shortTime' }}</h1>
+       </div>  
+     </div>
 
    </div>
     
