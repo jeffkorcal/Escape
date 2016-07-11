@@ -1,0 +1,15 @@
+{
+  "name": "escape",
+  "description": "Browser Wallpaper App",
+  "authors": [
+    "Jeff Korcal"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jeffkorcal/2016-06-mvp",
+  "dependencies": {
+    "font-awesome": "fontawesome#^4.6.3",
+    "angular-route": "^1.5.7",
+    "angular": "^1.5.7",
+    "Materialize": "materialize#^0.97.6"
+  }
+}
