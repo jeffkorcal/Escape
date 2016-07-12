@@ -11,6 +11,6 @@ module.exports = mongoose.model('Image',
     filename: String,
     id: Number,
     author: String,
-    author_url:String,
+    author_url: String,
     post_url: String
   }, { collection : 'images' }));

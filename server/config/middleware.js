@@ -12,6 +12,6 @@ module.exports = function(app, express){
   app.use(bodyParser.urlencoded({ extended: true }));
 
   // Serve Static Assets
-  app.use(express.static(__dirname + '/../client'));
+  app.use(express.static(__dirname + '/../../client'));
 
 };

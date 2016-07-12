@@ -5,7 +5,7 @@ var imageController = require('../controller/imageController.js');
 
 module.exports = function (app, express) {
   
-  app.get('api/images/', imageController.randomPic);
+  app.get('/', imageController.serveRandomPic);
+  app.get('/api/images/', imageController.serveRandomPic);
   
 };
-

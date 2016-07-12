@@ -1,19 +1,24 @@
+////////////////////////////////////////////////
+//Image Controller
+////////////////////////////////////////////////
 var Q = require('q');
 var Image = require('../model/imageModel.js');
-
 var findImage = Q.nbind(Image.findOne, Image);
-
-console.log('in image controller');
-Image.findOne({id: 0}, function(err, data) { 
-    if (err) {
-      console.log(err);
-    }
-    console.log(data.id);
-  });
+var findAllImages = Q.nbind(Image.find, Image);
 
 module.exports = {
-  randomPic: function (req, res, next) {
-    console.log('maybe');
+  serveRandomPic: function (req, res, next) {
+    var randomNum = Math.floor(Math.random() * 1084) + 1;
+    
+    findImage({id: randomNum}).then(function (image){
+      res.json(image);
+    }).catch(function(err) {
+        console.log(err);
+    });
+  },
+
+  serveGrayScalePic: function (req, res, next) {
+
   }
 
 }
