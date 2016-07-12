@@ -15,10 +15,5 @@ module.exports = {
     }).catch(function(err) {
         console.log(err);
     });
-  },
-
-  serveGrayScalePic: function (req, res, next) {
-
   }
-
 }

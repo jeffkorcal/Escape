@@ -9,40 +9,9 @@
 </head>
 <body ng-app="escape">
 
-<!--   <div ng-view></div>
- -->
- <div ng-controller="mainController">
-   <div class="background" style="background-image: url({{url}})">
+  <div ng-view></div>
 
-    <div class="centered">
-      <h1 class="center">{{ today | date:'longDate' }}</h1>
-      <h1 class="center">{{ today | date:'shortTime' }}</h1> 
-    </div>
-
-    <footer class="row foot">
-      <div class="col s4">
-        <p class="left-align">
-          <span class="pointer" ng-click="changePicture()">Change</span>
-        </p>
-      </div>
-
-      <div class="col s4">
-        <p class="center-align">
-          <a href="{{credit}}">{{author}}</a>
-        </p>
-      </div>
-
-      <div class="col s4">
-        <p class="right-align">
-          <span class="pointer" ng-click="grayScale()">GrayScale</span>
-        </p>
-      </div>
-    </footer>
-
-    </div>
-   
- </div>
-
+ 
   <script type="text/javascript" src="./lib/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="./lib/Materialize/dist/js/materialize.js"></script>
   <script type="text/javascript" src="./lib/angular/angular.min.js"></script>

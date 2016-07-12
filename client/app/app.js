@@ -1,18 +1,18 @@
-var app = angular.module('escape', []);
+var app = angular.module('escape', ['ngRoute']);
 
-// app.config(function ($routeProvider, $httpProvider) {
-//   $routeProvider
-//     .when('/', {
-//       templateUrl: 'main.html',
-//       controller: 'mainController'
-//     });
+app.config(function ($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: './main.html',
+      controller: 'mainController'
+    });
 
-// });
+});
 
 app.controller('mainController', function($scope, $interval, Image) {
   $scope.author = '';
   $scope.credit = '';
-  $scope.url = '';
+  $scope.url = 'https://unsplash.it/200/300/?random';
   $scope.grayScaled = true;
 
   //click handler for changing pictures
