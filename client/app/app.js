@@ -11,11 +11,11 @@ app.config(function ($routeProvider) {
     })
     .when('/signin', {
       templateUrl: './app/partials/signin.html',
-      controller: 'signupController'
+      controller: 'authController'
     })
     .when('/signup', {
       templateUrl: './app/partials/signup.html',
-      controller: 'signinController'
+      controller: 'authController'
     });
 });
 
@@ -81,6 +81,9 @@ app.factory('Image', function ($http) {
 ////////////////////////////////////////////////
 //Signin & Signup
 ////////////////////////////////////////////////
-app.controller('signupController', function($scope) {});
-app.controller('signinController', function($scope) {});
+app.controller('authController', function($scope) {
+
+  
+
+});
 
