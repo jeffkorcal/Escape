@@ -25,7 +25,7 @@ app.config(function ($routeProvider) {
 app.controller('mainController', function($scope, $interval, Image) {
   $scope.author = '';
   $scope.credit = '';
-  $scope.url = 'https://unsplash.it/200/300/?random';
+  $scope.url = '';
   $scope.grayScaled = true;
 
   //click handler for changing pictures
@@ -81,9 +81,59 @@ app.factory('Image', function ($http) {
 ////////////////////////////////////////////////
 //Signin & Signup
 ////////////////////////////////////////////////
-app.controller('authController', function($scope) {
+app.controller('authController', function($scope, Authorize) {
+  $scope.user = {};
 
-  
+  $scope.signin = function () {
+    console.log('in Controller', $scope.user);
+    //TODO
+    Authorize.signin($scope.user)
+    .then()
+    .catch(function (err) {
+      console.log(err);
+    });;
+  };
+
+  $scope.signup = function () {
+    console.log('in Controller', $scope.user);
+    //TODO
+    Authorize.signup($scope.user)
+    .then()
+    .catch(function (err) {
+      console.log(err);
+    });
+  };
+
+});
+
+app.factory('Authorize', function ($http) {
+
+  var signin = function (user) {
+    return $http({
+      method: 'POST',
+      url: 'api/users/signin',
+      data: user
+    })
+    .then(function (res) {
+      return res;
+    });
+  }
+
+  var signup = function (user) {
+    return $http({
+      method: 'POST',
+      url: 'api/users/signup',
+      data: user
+    })
+    .then(function (res) {
+      return res;
+    })
+  }
+
+  return {
+    signin: signin, 
+    signup: signup 
+  } 
 
 });
 
