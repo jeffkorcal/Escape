@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8" />
   <title>Escape</title>
   <link href="./lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="./lib/Materialize/bin/materialize.css"  media="screen,projection"/>
   <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
-<body>
+<body ng-app="escape">
 
-  <div ng-app="escape">
-      
-     <div ng-controller="menuController" class="background" style="background-image: url({{url}})">
+<!--   <div ng-view></div>
+ -->
+ <div ng-controller="mainController">
+   <div class="background" style="background-image: url({{url}})">
 
-     <div class="centered">
-       <div ng-controller="timeController">
-         <h1 class="center">{{ today | date:'longDate' }}</h1>
-         <h1 class="center">{{ today | date:'shortTime' }}</h1>
-       </div>  
-     </div>
+    <div class="centered">
+      <h1 class="center">{{ today | date:'longDate' }}</h1>
+      <h1 class="center">{{ today | date:'shortTime' }}</h1> 
+    </div>
 
     <footer class="row foot">
       <div class="col s4">
@@ -40,10 +40,8 @@
     </footer>
 
     </div>
-
-    
-  </div>
-
+   
+ </div>
 
   <script type="text/javascript" src="./lib/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="./lib/Materialize/dist/js/materialize.js"></script>

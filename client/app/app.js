@@ -1,12 +1,21 @@
 var app = angular.module('escape', []);
 
+// app.config(function ($routeProvider, $httpProvider) {
+//   $routeProvider
+//     .when('/', {
+//       templateUrl: 'main.html',
+//       controller: 'mainController'
+//     });
 
-app.controller('menuController', function($scope, Image) {
+// });
+
+app.controller('mainController', function($scope, $interval, Image) {
   $scope.author = '';
   $scope.credit = '';
   $scope.url = '';
   $scope.grayScaled = true;
 
+  //click handler for changing pictures
   $scope.changePicture = function() {
     Image.getRandomPic().then(function(data){
       $scope.author = data.author;
@@ -16,6 +25,7 @@ app.controller('menuController', function($scope, Image) {
     });
   };
 
+  //click handler for grayScale
   $scope.grayScale = function() {
     if($scope.grayScaled) {
       var url = $scope.url;
@@ -29,10 +39,7 @@ app.controller('menuController', function($scope, Image) {
 
   $scope.changePicture();
 
-});
-
-app.controller('timeController', function($scope, $interval) {
-    
+  //Clock & Date Control
   var tick = function() {
     $scope.today = Date.now();
   }
