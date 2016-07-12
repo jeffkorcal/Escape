@@ -1,14 +1,27 @@
 var app = angular.module('escape', ['ngRoute']);
 
+////////////////////////////////////////////////
+//Config
+////////////////////////////////////////////////
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: './main.html',
+      templateUrl: './app/partials/main.html',
       controller: 'mainController'
+    })
+    .when('/signin', {
+      templateUrl: './app/partials/signin.html',
+      controller: 'signupController'
+    })
+    .when('/signup', {
+      templateUrl: './app/partials/signup.html',
+      controller: 'signinController'
     });
-
 });
 
+////////////////////////////////////////////////
+//Main
+////////////////////////////////////////////////
 app.controller('mainController', function($scope, $interval, Image) {
   $scope.author = '';
   $scope.credit = '';
@@ -64,4 +77,10 @@ app.factory('Image', function ($http) {
   } 
 
 });
+
+////////////////////////////////////////////////
+//Signin & Signup
+////////////////////////////////////////////////
+app.controller('signupController', function($scope) {});
+app.controller('signinController', function($scope) {});
 

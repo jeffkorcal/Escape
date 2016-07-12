@@ -4,6 +4,9 @@ fonts & color
 h1 {
   color: rgb(252, 252, 252);
 }
+h4 {
+  color: rgb(252, 252, 252);
+}
 a, p {
   color: rgb(252, 252, 252);
 }
@@ -38,6 +41,13 @@ time
   transform: translateY(-50%);
 }
 
+.centerbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
 /*********************************************
 Footer Menu
 **********************************************/
@@ -46,4 +56,21 @@ Footer Menu
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/*********************************************
+Signin
+**********************************************/
+.box{
+  background-image:
+    linear-gradient(#cfd8dc, transparent, #eceff1, transparent);
+  padding: 3em;
+}
+.input-field {
+  color: rgb(252, 252, 252);
+  width: 250px;
+}
+.input-field label{
+  color: rgb(252, 252, 252);
+  left: 0;
 }
