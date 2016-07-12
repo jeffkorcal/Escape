@@ -5,12 +5,13 @@ h1 {
   text-shadow: 0.5px 0.5px 0.5px #000;
   color: rgb(252, 252, 252);
 }
-a {
+a, p {
   color: rgb(252, 252, 252);
 }
-a:hover {
+a:hover, p:hover {
   color: rgba(252, 252, 252, 0.7);
 }
+
 /*********************************************
 background
 **********************************************/
@@ -33,4 +34,14 @@ time
   width: 100%;
   top: 50%;
   transform: translateY(-50%);
+}
+
+/*********************************************
+Footer Menu
+**********************************************/
+.foot {
+  margin-bottom: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

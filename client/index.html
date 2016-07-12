@@ -9,31 +9,8 @@
 <body>
 
   <div ng-app="escape">
-    
-   <div class="background" style="background-image: url(https://source.unsplash.com/category/nature/)">
-
-    <div class="row">
-    
-      <div class="col s4">
-        <p class="left-align">
-          <a href="">Change</a>
-        </p>
-      </div>
-
-      <div class="col s4">
-        <p class="center-align">
-          <a href="">GrayScale</a>
-        </p>
-      </div>
-
-      <div class="col s4">
-        <p class="right-align">
-          <a href="">Photographer</a>
-        </p>
-      </div>
-
-    </div>
-    
+      
+     <div ng-controller="menuController" class="background" style="background-image: url({{url}})">
 
      <div class="centered">
        <div ng-controller="timeController">
@@ -42,7 +19,26 @@
        </div>  
      </div>
 
-   </div>
+      <div class="row foot">
+        <div class="col s4">
+          <p class="left-align" ng-click="changePicture()">Change</p>
+        </div>
+
+        <div class="col s4">
+          <p class="center-align">
+            <a href="{{credit}}">{{author}}</a>
+          </p>
+        </div>
+
+        <div class="col s4">
+          <p class="right-align" ng-click="grayScale()">GrayScale</p>
+        </div>
+
+      </div>
+
+
+    </div>
+
     
   </div>
 
