@@ -1,36 +1,65 @@
 ////////////////////////////////////////////////
 //Modules
 ////////////////////////////////////////////////
-
-var images = require('../env/images.json');
 var express = require('express');
 var mongoose = require('mongoose');
-var bodyParser = require('body-Parser');
-var request = require('request');
-var fs = require('fs');
 
 // declare server
 var app = express();
 
 ////////////////////////////////////////////////
-//Middleware
+//Configure Middleware & Routes
 ////////////////////////////////////////////////
+require('./config/middleware.js')(app, express);
+require('./config/routes.js')(app, express);
 
-// Parse JSON (uniform resource locators)
-app.use(bodyParser.json());
-
-// Parse Forms (signup/login)
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Serve Static Assets
-app.use(express.static(__dirname + '/../client'));
-
+////////////////////////////////////////////////
+//Database
+////////////////////////////////////////////////
+mongoose.connect('mongodb://localhost/escape');
+var db = mongoose.connection;
+db.on('error', console.error);
+db.once('open', function() {
+  console.log('database connected');
+});
 
 app.listen(8000, function() {
   console.log('listening on port 8000');
 });
 
 module.exports = app;
+
+
+// Image Model
+// var Image = mongoose.model('Image', 
+//   new mongoose.Schema({
+//     format: String,
+//     width: Number,
+//     height: Number,
+//     filename: String,
+//     id: Number,
+//     author: String,
+//     author_url:String,
+//     post_url: String
+//   }, { collection : 'images' }));
+
+// Image.findOne({id: 0}, function(err, data) { 
+//     if (err) {
+//       console.log(err);
+//     }
+//     console.log(data.author_url);
+//   });
+
+
+
+//random image
+//https://unsplash.it/800/600/?random
+
+//specific image
+//https://unsplash.it/800/600?image=0
+
+//gray scale
+//https://unsplash.it/g/800/600
 
 
 // mongoose.connect('mongodb://localhost/escape');
@@ -52,6 +81,11 @@ module.exports = app;
 // });
 
 // var Image = mongoose.model('Image', imageSchema);
+
+
+// Image.find({}, function(err, data) { 
+//     console.log(err, data, data.length);
+//   });
 
 // snippet to download json list from unsplash.it
 // request('https://unsplash.it/list', function (err, res, body) {
