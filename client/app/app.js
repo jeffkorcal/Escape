@@ -82,11 +82,11 @@ app.factory('Image', function ($http) {
 ////////////////////////////////////////////////
 //Signin & Signup
 ////////////////////////////////////////////////
-app.controller('authController', function($scope, $location, Authorize) {
+app.controller('authController', function($scope, $location, Auth) {
   $scope.user = {};
 
   $scope.signin = function () {
-    Authorize.signin($scope.user)
+    Auth.signin($scope.user)
     .then(function(obj) {
       //TODO: need to implement authorization and sessions
       console.log(obj.data);
@@ -99,7 +99,7 @@ app.controller('authController', function($scope, $location, Authorize) {
   };
 
   $scope.signup = function () {
-    Authorize.signup($scope.user)
+    Auth.signup($scope.user)
     .then(function(obj) {
       //TODO: need to implement authorization and sessions
       console.log(obj.data);
@@ -113,7 +113,7 @@ app.controller('authController', function($scope, $location, Authorize) {
 
 });
 
-app.factory('Authorize', function ($http) {
+app.factory('Auth', function ($http) {
 
   var signin = function (user) {
     return $http({

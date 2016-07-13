@@ -14,4 +14,5 @@ module.exports = function(app, express){
   // Serve Static Assets
   app.use(express.static(__dirname + '/../../client'));
 
+  //TODO: Need to add sessions
 };
