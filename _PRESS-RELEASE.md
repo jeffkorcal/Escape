@@ -23,7 +23,7 @@ Once the project moves into development, the press release can be used as a touc
   > Bored of opening the same brower window?
 
 ## Solution ##
-  > Try Escape. This app inspires users everytime the brower refreshes with a high resolution photo of a paticular theme of choice. If you like the picture you can link to other photos taken from that particular photographer.
+  > Try Escape. This app inspires users everytime the brower refreshes with a high resolution photo. If you like the picture please check out the photographers profile.
 
 ## How to Get Started ##
   > Signup and get instance access to a library full of great photos. 

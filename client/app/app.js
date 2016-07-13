@@ -19,6 +19,7 @@ app.config(function ($routeProvider) {
     });
 });
 
+
 ////////////////////////////////////////////////
 //Main
 ////////////////////////////////////////////////
@@ -37,6 +38,7 @@ app.controller('mainController', function($scope, $interval, Image) {
       $scope.grayScaled = true;
     });
   };
+  $scope.changePicture();
 
   //click handler for grayScale
   $scope.grayScale = function() {
@@ -49,8 +51,6 @@ app.controller('mainController', function($scope, $interval, Image) {
       $scope.grayScaled = false;
     }
   };
-
-  $scope.changePicture();
 
   //Clock & Date Control
   var tick = function() {
@@ -78,29 +78,36 @@ app.factory('Image', function ($http) {
 
 });
 
+
 ////////////////////////////////////////////////
 //Signin & Signup
 ////////////////////////////////////////////////
-app.controller('authController', function($scope, Authorize) {
+app.controller('authController', function($scope, $location, Authorize) {
   $scope.user = {};
 
   $scope.signin = function () {
-    console.log('in Controller', $scope.user);
-    //TODO
     Authorize.signin($scope.user)
-    .then()
+    .then(function(obj) {
+      //TODO: need to implement authorization and sessions
+      console.log(obj.data);
+        $location.path('/');
+    })
     .catch(function (err) {
       console.log(err);
-    });;
+      $scope.user = {};
+    });
   };
 
   $scope.signup = function () {
-    console.log('in Controller', $scope.user);
-    //TODO
     Authorize.signup($scope.user)
-    .then()
+    .then(function(obj) {
+      //TODO: need to implement authorization and sessions
+      console.log(obj.data);
+        $location.path('/');
+    })
     .catch(function (err) {
       console.log(err);
+      $scope.user = {};
     });
   };
 
@@ -111,7 +118,7 @@ app.factory('Authorize', function ($http) {
   var signin = function (user) {
     return $http({
       method: 'POST',
-      url: 'api/users/signin',
+      url: '/api/user/signin/',
       data: user
     })
     .then(function (res) {
@@ -122,7 +129,7 @@ app.factory('Authorize', function ($http) {
   var signup = function (user) {
     return $http({
       method: 'POST',
-      url: 'api/users/signup',
+      url: '/api/user/signup/',
       data: user
     })
     .then(function (res) {
