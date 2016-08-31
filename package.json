@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "Browser Wallpaper App",
   "scripts": {
-    "start": "nodemon server/server.js"
+    "dev:start": "nodemon server/server.js",
+    "dev:startDB": "mongod"
   },
-  "repository": {
+  "repository":{
     "type": "git",
     "url": "git+https://github.com/jeffkorcal/2016-06-mvp.git"
   },
