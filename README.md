@@ -9,7 +9,7 @@
   * Install frontend depenencies
     * ```bower install```
   * Run MongoDB
-    * ```npm run dev:startDB```
+    * ```npm run dev:startdb```
   * Run Node Server
     * ```npm run dev:start```
   * Open localhost:8000

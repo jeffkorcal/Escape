@@ -4,7 +4,7 @@
   "description": "Browser Wallpaper App",
   "scripts": {
     "dev:start": "nodemon server/server.js",
-    "dev:startDB": "mongod"
+    "dev:startdb": "mongod"
   },
   "repository":{
     "type": "git",
